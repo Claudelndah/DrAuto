@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: db_intervention
+    environment:
+      POSTGRES_PASSWORD: intervention
+      POSTGRES_USER: intervention
+      POSTGRES_DB: intervention
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./db/mount:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
